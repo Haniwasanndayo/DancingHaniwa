@@ -1,13 +1,13 @@
 <?php
-		while(true){						//ˆÈ‰º‚ð–³ŒÀƒ‹[ƒv‚·‚é
-		//$status © ƒNƒ‰ƒEƒhƒT[ƒo‚©‚çledstatus.txt‚ðŽæ“¾
+		while(true){						//ä»¥ä¸‹ã‚’ç„¡é™ãƒ«ãƒ¼ãƒ—ã™ã‚‹
+		//$status â† ã‚¯ãƒ©ã‚¦ãƒ‰ã‚µãƒ¼ãƒã‹ã‚‰ledstatus.txtã‚’å–å¾—
 		$status = file_get_contents("https://hanihanitest.azurewebsites.net/getLEDStatus.php");
 		
-		if($status == 1){				//u1v(ON)‚È‚ç‚Î
+		if($status == 1){				//ã€Œ1ã€(ON)ãªã‚‰ã°
 			exec("python3 bazirisuku.py");
 			$get = file_get_contents("https://hanihanitest.azurewebsites.net/ledstatuszero.php");
 		}
 		
-		usleep(1000000);					//1•b‘Ò‚Â
+		usleep(10);					//10ç§’å¾…ã¤
 	}
 ?>
